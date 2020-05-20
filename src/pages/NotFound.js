@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-// import Header from '../../components/Header/Header';
+import Header from '../components/Header';
 
 const NotFound = () =>{
 
@@ -13,9 +13,9 @@ const NotFound = () =>{
 
     return (
         <Fragment>
+            <Header />
             <h1>Not Found</h1>
-            {/* <Header />
-            <h1 style={styleText}>Página Não Encontrada</h1> */}
+            <h1 style={styleText}>Página Não Encontrada</h1>
         </Fragment>
     );
 }

@@ -1,0 +1,66 @@
+@import './helpers/variables';
+
+header {
+
+    .header-wrapper {
+    
+        background-color: $medium-gray;
+        color: $white;
+        height: 64px;
+        position: fixed;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    
+        .logo-container {
+            margin-left: 1.1em;
+            height: 2.5em;
+            // @media #{$mq-mobile} {
+            //     margin-left: 0;
+            // }
+            
+            .pokemon-logo {
+                width: auto;
+                height: 2.5em;
+            }
+        }
+        
+        // nav Menu
+        .menu {
+    
+            position: relative;
+            width: 55%;
+            z-index: 99;
+    
+            // @media #{$mq-mobile}, #{$mq-md-device} {
+            //     display: none;     
+            // }
+    
+            .menu-list {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                list-style: none;
+    
+                .navigation-item {
+                    display: flex;
+                    cursor: pointer;
+
+                    .pokebola {
+                        display: block;
+                        position: relative;
+                        width: auto;
+                        height: 1.5em;
+                        margin-left: 0.3em;                         
+                    }
+                }
+
+            }
+        }
+    }
+    
+    .fixed {
+        position: sticky;
+        width: 100%;
+    }
+}
