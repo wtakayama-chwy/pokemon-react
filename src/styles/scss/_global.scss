@@ -1,16 +1,10 @@
-// Reset CSS
-* {
+body {    
+    // Reset CSS
     margin: 0;
     padding: 0;
     outline: 0;
     box-sizing: border-box;
-}
-
-body {    
-
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     word-break: normal;
     font-family: $default-font;
     background: $light-gray;
@@ -19,9 +13,13 @@ body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     line-height: 1.15;
-    overflow-y: scroll;
+    overflow-y: auto;
 
     h1 {
+      color: $dark-gray;
+    }
+
+    h2, h3, h4, h5 {
       color: $medium-gray;
     }
 }

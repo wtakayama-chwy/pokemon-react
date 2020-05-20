@@ -1,6 +1,9 @@
 // HELPERS = Variables and Mixins
-@import './styles/scss/helpers/variables';
+@import './styles/scss/helpers/_variables';
 
-// Styles
-@import './styles/scss/global.scss';
-@import './styles/scss/Home.scss';
+// Global Styles & Pages
+@import './styles/scss/global';
+@import './styles/scss/home';
+
+// Components
+@import './styles/scss/header';
