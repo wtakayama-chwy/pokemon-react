@@ -1,62 +1,38 @@
-import React, { useState, useEffect, useCallback, Fragment } from 'react'
+import React, { useState, Fragment } from 'react'
+import { useSelector } from 'react-redux'
+
 import ApiService from '../services/apiService'
+import { selectors } from '../redux/selectors/selectors'
 
 export default function Pokemons() {
 
-    const [pokemon, setPokemon] = useState()
     const [click, setClick] = useState(false)
     const [name, setName] = useState()
     const apiService = ApiService
-
-    const getPokemons = useCallback(
-        () => {
-            apiService.ListPokemons(1)
-                .then(res => {
-                    setPokemon(res)                    
-                })
-        },
-        [apiService],
-    )
-
-    const Name = () => {
-        return (
-            <h2>{pokemon['name']}</h2>
-        )
-    }
-
-    // const getPokemon = useCallback(
-    //     () => {
-    //         console.log(pokemon)            
-    //     },
-    //     [pokemon],
-    // )
-
-    function handleClick() {
-        setClick(true)
-        console.log(pokemon)
-    }
-
-    useEffect(() => {
-        getPokemons()        
-    }, [getPokemons])
+    const pokemon = useSelector(selectors.getPokemon)
+    const loading = useSelector(selectors.getLoading)
+    const fetched = useSelector(selectors.getFetched)
 
     return ( 
-        <Fragment>
-            <h1>Pokemon</h1>
-            <button onClick={handleClick}>Clique</button>
-            { click ? (
-                <div>                    
-                    <h2>Nome: {pokemon['name']}</h2>
-                    <h2>Peso: {pokemon['weight']}kg</h2>
-                    <h2>Altura: {pokemon['height']}pés</h2>
-                    <h3>Tipos: </h3>
-                    <ul>
-                        {pokemon['types'].map(item => (
-                            <li key={item.slot}>{item['type'].name}</li>                            
-                        ))
-                        }
-                    </ul>
-                    <img src={pokemon['sprites']['back_default']} alt={pokemon['name']}/>
+        <Fragment>    
+            { fetched ? (
+                <div className="pokemon">
+                    <div className="pokemon-card">                    
+                        <h2 className="pokemon-name">{pokemon['name']}</h2>
+                        <div className="img-wrapper">
+                            <img src={pokemon['sprites']['front_default']} alt={pokemon['name']}/>
+                        </div>
+                        <div className="pokemon-details">
+                            <h4>Peso: {(pokemon['weight']/10).toFixed(2).toLocaleString()}kg</h4>
+                            <h4>Altura: {(pokemon['height']/10).toFixed(2).toLocaleString()}m</h4>
+                            <ul>
+                                {pokemon['types'].map(item => (
+                                    <h4><li key={item.slot}>{item['type'].name}</li></h4>                            
+                                ))
+                                }
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             ): 
                 null

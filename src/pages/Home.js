@@ -1,15 +1,22 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 
 import Header from '../components/Header';
 import Pokemons from '../components/Pokemons';
+import Searchbar from '../components/Searchbar';
 
 export default function Home() {
-    // Variables with state
+    
+    const [search, setSearch] = useState()
+
+    function updateSearch(text) { 
+        console.log(search)
+    }
 
     return(
         <Fragment>
             <Header />
-            <Pokemons />
+            <Searchbar updateSearch={updateSearch}/>
+            <Pokemons search={search}/>
         </Fragment>
     )
 }
