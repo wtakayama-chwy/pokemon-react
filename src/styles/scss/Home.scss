@@ -1,0 +1,8 @@
+@import './helpers/variables';
+
+.radiobuttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $light-gray;
+}
