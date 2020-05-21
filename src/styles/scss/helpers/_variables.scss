@@ -1,5 +1,7 @@
 // Font
-$default-font: 400 14px Roboto, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+$default-font: Roboto, sans-serif;
 
 
 // Palette Colors
@@ -7,3 +9,6 @@ $white: #f4f4f4;
 $light-gray: hsl(216, 26%, 96%);
 $medium-gray: hsl(216, 26%, 40%);
 $dark-gray: #41414d;
+$black: #181818;
+$blue: #669ef3;
+$border-color: #d1ccd0;
