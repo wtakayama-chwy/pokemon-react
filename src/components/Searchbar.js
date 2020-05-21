@@ -7,26 +7,45 @@ import Button from './Button';
 
 export default function Searchbar() {
 
+    const searchTypeSkills = useSelector(selectors.getSearchTypeSkills)
     const inputValue = useSelector(selectors.getInput)
     const dispatch = useDispatch()
 
     const handleInput = (event) => dispatch(actions.inputValue(event.target.value))
 
     return (
+        
         <Fragment>
-            <div className="contact-form">
+        { !searchTypeSkills
+            ? <div className="contact-form">
                 <form className="form">
                     <input 
                         className="form-field"
                         name="Pokemon"
                         type="text" 
-                        placeholder="Qual pokémon está buscando? Nome ou Número"
+                        placeholder="Qual pokémon procura? Nome ou id"
                         onChange={handleInput}
                         required
                     />
                     <Button query={inputValue}/>
                 </form>
             </div>
+
+            : <div className="contact-form">
+                <form className="form">
+                    <input 
+                        className="form-field"
+                        name="Pokemon"
+                        type="text" 
+                        placeholder="Qual habilidade procura?"
+                        onChange={handleInput}
+                        required
+                    />
+                    <Button query={inputValue}/>
+                </form>
+            </div> 
+        }
+            
         </Fragment>
     )
 }

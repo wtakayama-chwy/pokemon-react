@@ -12,9 +12,11 @@ export default function Pokemons() {
     const pokemon = useSelector(selectors.getPokemon)
     const loading = useSelector(selectors.getLoading)
     const fetched = useSelector(selectors.getFetched)
+    const searchTypeSkills = useSelector(selectors.getSearchTypeSkills)
 
     return ( 
-        <Fragment>    
+        <Fragment> 
+            { searchTypeSkills ? ( <h1>Skills</h1> ) : <h1>Name</h1> }   
             { fetched ? (
                 <div className="pokemon">
                     <div className="pokemon-card">                    

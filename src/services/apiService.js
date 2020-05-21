@@ -16,7 +16,7 @@ const ApiService = {
 
     ListPokemons: (id) => consumeApi(`pokemon/${id}`),
 
-    ListDetails: (ability) => consumeApi(`ability/${ability}`),
+    ListAbility: (ability) => consumeApi(`ability/${ability}`),
 
     HandleError: res => {
         if(!res.ok){
