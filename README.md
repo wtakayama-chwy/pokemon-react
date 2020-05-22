@@ -36,8 +36,9 @@
   - Run in your command line ``` npm install ```
   - Then run ``` npm start ```
   
-## :star2 Improvments:
+## :star2: Improvments:
   - Implement tests with Jest
+  - Generic Handle Messages - passing message title and type (error, success or warning)
 
 ## :metal: Contributions
 Pull requests are always welcomed. For major alterations please think about openning an issue first.
