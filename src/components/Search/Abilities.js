@@ -24,12 +24,12 @@ export default function Abilities() {
 
     return ( 
         <Fragment> 
-            { searchTypeSkills && fetchedSkills ? ( 
+            { searchTypeSkills & fetchedSkills || history & fetchedSkills ? ( 
                 <div className="abilities">
                     <h2 className="ability-name">Habilidade: {ability['name']} </h2> 
                     <ul className="abilities-list">
                         {ability['pokemon'].map(item => (
-                            <Link key={item.index} to={`/${item['pokemon'].url.substr(26)}`} onClick={handleLink} id="list-item" className="link">
+                            <Link key={item.index} to={`/${item['pokemon'].url.substr(26)}`} onClick={handleLink} className="link">
                                 <li key={item.id} className="list-item">{item['pokemon'].name}</li>
                             </Link>
                         ))}

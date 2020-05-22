@@ -55,5 +55,44 @@
             margin-top: -1.2rem;
         }
 
+        .pokemon-abilities {
+
+            @media #{$mq-mobile} {
+                width: 70%;
+            }
+
+            .skills-title {
+                color: $white;
+                margin-top: 0.6em;
+            }
+            .skills-list {
+                color: $white;
+
+                .link {
+                    text-decoration: none;
+                }
+
+                .ability{
+                    color: $light-gray !important;
+                    background-color: $dark-gray;
+                    width: inherit;
+                    min-width: 300px;
+                    font-size: 1rem;
+                    font-weight: 300;
+                    line-height: 1.75rem;
+                    text-align: center;
+                    margin: 0.4rem 0;
+                    border: 1px solid $blue;
+    
+                    @media #{$mq-mobile} {
+                        min-width: 0;
+                    }
+    
+                    &:hover {
+                        background-color: $dark-blue;
+                    }
+                }
+            }
+        }
     }
 }
