@@ -1,12 +1,13 @@
 import React, { Fragment } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectors } from '../redux/selectors/selectors';
-import { actions } from '../redux/actions';
+import { selectors } from '../../redux/selectors/selectors';
+import { actions } from '../../redux/actions';
 
 import Button from './Button';
 
 export default function Searchbar() {
 
+    const searchTypeName = useSelector(selectors.getSearchTypeName)
     const searchTypeSkills = useSelector(selectors.getSearchTypeSkills)
     const inputValue = useSelector(selectors.getInput)
     const dispatch = useDispatch()
@@ -16,8 +17,8 @@ export default function Searchbar() {
     return (
         
         <Fragment>
-        { !searchTypeSkills
-            ? <div className="contact-form">
+        { searchTypeName &&
+            <div className="contact-form">
                 <form className="form">
                     <input 
                         className="form-field"
@@ -30,8 +31,9 @@ export default function Searchbar() {
                     <Button query={inputValue}/>
                 </form>
             </div>
-
-            : <div className="contact-form">
+        }
+        { searchTypeSkills &&
+             <div className="contact-form">
                 <form className="form">
                     <input 
                         className="form-field"
