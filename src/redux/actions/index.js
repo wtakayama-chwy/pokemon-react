@@ -20,6 +20,12 @@ const actions = {
     hideLoader: () => ({
         type: actionTypes.HIDE_LOADER
     }),
+    errorHandler: () => ({
+        type: actionTypes.ERROR_HANDLER
+    }),
+    hideErrorHandler: () => ({
+        type: actionTypes.HIDE_ERROR
+    }),
     showMessage: () => ({
         type: actionTypes.SHOW_MESSAGE
     }),
@@ -57,8 +63,13 @@ const actions = {
                     }
                 })
                 .catch(err => {
-                    const errorMsg = err.message
-                    dispatch(actions.fetchPokemonFailure(errorMsg))
+                    dispatch(actions.errorHandler())
+                    dispatch(actions.hideLoader())   
+                    setTimeout(() => {
+                        dispatch(actions.hideErrorHandler())                                                                  
+                    }, 4000);
+                    // const errorMsg = err.message
+                    // dispatch(actions.fetchPokemonFailure(errorMsg))
                 })
         }
     },
@@ -93,8 +104,13 @@ const actions = {
                     }
                 })
                 .catch(err => {
-                    const errorMsg = err.message
-                    dispatch(actions.fetchAbilityFailure(errorMsg))
+                    dispatch(actions.errorHandler())
+                    dispatch(actions.hideLoader())   
+                    setTimeout(() => {
+                        dispatch(actions.hideErrorHandler())                                                                  
+                    }, 4000);
+                    // const errorMsg = err.message
+                    // dispatch(actions.fetchPokemonFailure(errorMsg))
                 })
         }
     }

@@ -7,10 +7,12 @@ import { Provider } from 'react-redux'
 import { Store } from './redux/store'
 
 import Loader from './components/Loader/Loader'
+import Error from './components/ErrorHandler/ErrorHandler'
 
 ReactDOM.render(
     <Provider store={Store}>
         <Loader />
+        <Error />
         <App />
     </Provider >,
     document.getElementById('root')

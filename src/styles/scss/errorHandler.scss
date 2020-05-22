@@ -1,10 +1,10 @@
 @import './helpers/variables';
 @import './helpers/mixins';
 
-.handler-messages {
-    @include message(solid $light-green 0.1em);
+.handler-error {
+    @include message(solid $red 0.1em);
 
-    h4 {
+    #error-message {
         color: $white;
         font-weight: bold;
     }

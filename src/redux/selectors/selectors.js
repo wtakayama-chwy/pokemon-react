@@ -7,7 +7,8 @@ const selectors = {
     getLoading: state => state.loadingState.loading,
     getMessage: state => state.messageState.message,
     getFetched: state => state.pokemonState.fetched,
-    getFetchedSkills: state => state.pokemonState.fetchedSkills
+    getFetchedSkills: state => state.pokemonState.fetchedSkills,
+    getError: state => state.errorState.error
 }
 
 export { selectors }
