@@ -25,8 +25,8 @@ export default function Ability() {
 
     return(
         <Fragment>
-            <Header />
             <Message />
+            <Header />
             <div className="radiobuttons">
                 <RadioButton                     
                     id="Nome"

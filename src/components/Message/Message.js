@@ -10,7 +10,7 @@ export default function Message() {
         <Fragment>
             { message && (
                 <div className="handler-messages">
-                    <h4>Busca completada com sucesso!</h4>                            
+                    <h1>Busca completada com sucesso!</h1>
                 </div>
             )}
         </Fragment>

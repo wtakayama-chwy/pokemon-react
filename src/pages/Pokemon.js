@@ -25,8 +25,8 @@ export default function Pokemon() {
 
     return(
         <Fragment>                        
-            <Header />
             <Message />
+            <Header />
             <div className="radiobuttons">
                 <RadioButton                     
                     id="Nome"

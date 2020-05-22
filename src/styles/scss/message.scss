@@ -4,8 +4,12 @@
 .handler-messages {
     @include message(solid $light-green 0.1em);
 
-    h4 {
+    h1 {
         color: $white;
         font-weight: bold;
+
+        @media #{$mq-mobile} {
+            font-size: 0.8em;
+        }
     }
 }

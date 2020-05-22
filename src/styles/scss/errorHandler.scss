@@ -7,5 +7,9 @@
     #error-message {
         color: $white;
         font-weight: bold;
+
+        @media #{$mq-mobile} {
+            font-size: 0.8em;
+        }
     }
 }
