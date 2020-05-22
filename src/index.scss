@@ -1,9 +1,17 @@
 // HELPERS = Variables and Mixins
 @import './styles/scss/helpers/_variables';
+@import './styles/scss/helpers/placeholders';
 
 // Global Styles & Pages
 @import './styles/scss/global';
 @import './styles/scss/home';
 
 // Components
+@import './styles/scss/loader';
 @import './styles/scss/header';
+@import './styles/scss/pokemon';
+@import './styles/scss/search';
+@import './styles/scss/button';
+@import './styles/scss/radioButton';
+@import './styles/scss/abilities';
+@import './styles/scss/message';

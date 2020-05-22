@@ -1,0 +1,35 @@
+@import './helpers/variables';
+
+.abilities {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+
+    .ability-name {
+        text-transform: capitalize;
+    }
+
+    .abilities-list {
+        width: 35%;
+
+        .link {
+            text-decoration: none;
+
+            .list-item{
+                color: $light-gray !important;
+                background-color: transparent;
+                width: inherit;
+                min-width: 300px;
+                font-size: 1.2rem;
+                font-weight: 300;
+                line-height: 1.75rem;
+                text-align: center;
+                margin: 0.4rem 0;
+                border: 1px solid $blue;
+                &:hover {
+                    background-color: $dark-blue;
+                }
+            }
+        }
+    }
+}

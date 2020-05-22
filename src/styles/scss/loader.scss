@@ -1,0 +1,124 @@
+@import './helpers/variables';
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: $black;
+    opacity: 0.99;
+    z-index: 999;
+
+/* animation frame! rotation movement of the pokeball */    
+  #loader {
+    width: 715px;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+    #moving-container {
+        width: 10em;
+        height: 10em;
+        margin: 10px auto 70px;
+        position: relative;
+        animation: translating 5s infinite;
+      }
+      #pokeball-container {
+        width: 10em;
+        height: 10em;
+        margin: 20px auto;
+        animation: spinning 5s infinite;
+      }
+      #pokeball { 
+        width: 10em;
+        height: 10em;
+        background-color: #fff;
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            background-color: red;
+            border-radius: 5em 5em 0 0;
+            width: 10em;
+            height: 5em;
+            position: absolute;
+        }
+        .pokeball-details {
+            width: 10em;
+            height: 1em;
+            background-color: #333;
+            position: absolute;
+            top: 4.5em;
+            &::before {
+                content: '';
+                width: 3.5em;
+                height: 3.5em;
+                border-radius: 50%;
+                background-color: #333;
+                position: absolute;
+                top: -1.25em;
+                left: 3.25em;
+                z-index: 200;
+            }
+            &::after {
+                content: '';
+                width: 1.8em;
+                height: 1.8em;
+                border: 0.3em solid white;
+                border-radius: 50%;
+                background-color: #fff;
+                position: absolute;
+                top: -0.65em;
+                left: 3.80em;
+                margin: 0 auto;
+                z-index: 250;
+                animation: color-change 3s infinite;
+            }
+        }                  
+      }      
+  }    
+}
+
+@keyframes spinning {
+    0% {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }
+    50% {
+        transform: rotate(325deg);
+        -webkit-transform: rotate(325deg);
+    }
+    100% {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }
+  }
+  
+  @keyframes translating {
+    0% {
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+    }
+    50% {
+        transform: translateX(50%);
+        -webkit-transform: translateX(50%);
+    }
+    100% {
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+    }
+  }
+  
+  @keyframes color-change {
+    0%, 20%, 40%, 60%, 100% {
+        background-color: #fff;
+    }
+    10%, 30%, 50%, 70%, 90% {
+        background-color: #f00;
+    }
+}

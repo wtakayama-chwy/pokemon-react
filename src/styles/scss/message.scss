@@ -1,0 +1,16 @@
+@import './helpers/variables';
+
+.handler-messages {
+    display: block;
+    margin: 0.8em auto;
+    text-align: center;
+    width: 90%;
+    padding: 1em 0;
+    border: 1px solid $light-green;
+    background-color: $black;
+    border-radius: 0.2em;
+
+    h4 {
+        color: $white;
+    }
+}
