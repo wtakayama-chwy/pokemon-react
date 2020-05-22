@@ -1,9 +1,9 @@
 @import './helpers/variables';
+@import './helpers/placeholders';
+@import './helpers/mixins';
 
 .loader-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @extend %flex-center;
     position: fixed;
     top: 0;
     left: 0;
@@ -13,37 +13,37 @@
     opacity: 0.99;
     z-index: 999;
 
-/* animation frame! rotation movement of the pokeball */    
-  #loader {
-    width: 715px;
-    height: 500px;
-    margin: 0 auto;
-    position: relative;
-    #moving-container {
-        width: 10em;
-        height: 10em;
-        margin: 10px auto 70px;
+    /* animation frame! rotation movement of the pokeball */    
+    #loader {
+        width: 715px;
+        height: 500px;
+        margin: 0 auto;
         position: relative;
-        animation: translating 5s infinite;
-      }
-      #pokeball-container {
-        width: 10em;
-        height: 10em;
-        margin: 20px auto;
-        animation: spinning 5s infinite;
-      }
-      #pokeball { 
-        width: 10em;
-        height: 10em;
-        background-color: #fff;
-        border-radius: 50%;
-        position: relative;
-        overflow: hidden;
+        #moving-container {
+            width: 10em;
+            height: 10em;
+            margin: 10px auto 70px;
+            position: relative;
+            animation: translating 5s infinite;
+        }
+        #pokeball-container {
+            width: 10em;
+            height: 10em;
+            margin: 20px auto;
+            animation: spinning 5s infinite;
+        }
+        #pokeball { 
+            width: 10em;
+            height: 10em;
+            background-color: #fff;
+            @include border-radius(50%);
+            position: relative;
+            overflow: hidden;
 
         &::before {
             content: '';
             background-color: red;
-            border-radius: 5em 5em 0 0;
+            @include border-radius(5em 5em 0 0);
             width: 10em;
             height: 5em;
             position: absolute;
@@ -58,7 +58,7 @@
                 content: '';
                 width: 3.5em;
                 height: 3.5em;
-                border-radius: 50%;
+                @include border-radius(50%);
                 background-color: #333;
                 position: absolute;
                 top: -1.25em;
@@ -70,7 +70,7 @@
                 width: 1.8em;
                 height: 1.8em;
                 border: 0.3em solid white;
-                border-radius: 50%;
+                @include border-radius(50%);
                 background-color: #fff;
                 position: absolute;
                 top: -0.65em;

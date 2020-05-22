@@ -1,0 +1,15 @@
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+        -ms-border-radius: $radius;
+            border-radius: $radius;
+}
+
+@mixin border($params) {
+    border: $params;
+}
+
+@mixin pokemon-image($w, $max) {
+    width: $w;
+    max-width: $max;
+}

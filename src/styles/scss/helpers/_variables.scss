@@ -16,6 +16,11 @@ $light-green: #84e184;
 $border-color: #d1ccd0;
 
 // Spacing values
-$width: 40%;
+$container: 40%;
+$container-small-screen: 70%;
+$max-image-size: 300px;
+$image-width: 85%; 
 
 // Media-queries
+$mq-mobile: "(max-width: 560px)";
+$mq-tablet: "(max-width: 1024px)";

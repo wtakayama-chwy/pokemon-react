@@ -10,7 +10,11 @@
     }
 
     .abilities-list {
-        width: 35%;
+        width: $container;
+
+        @media #{$mq-tablet} {
+            width: $container-small-screen;
+        }
 
         .link {
             text-decoration: none;
@@ -26,6 +30,11 @@
                 text-align: center;
                 margin: 0.4rem 0;
                 border: 1px solid $blue;
+
+                @media #{$mq-mobile} {
+                    min-width: 0;
+                }
+
                 &:hover {
                     background-color: $dark-blue;
                 }

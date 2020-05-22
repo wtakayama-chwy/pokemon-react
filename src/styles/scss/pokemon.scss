@@ -1,5 +1,6 @@
 @import './helpers/variables';
 @import './helpers/placeholders';
+@import './helpers/mixins';
 
 .pokemon {
     display: flex;
@@ -16,10 +17,13 @@
         display: flex;
         flex-flow: column wrap;
         align-items: center;
-
         box-sizing: border-box;
-        border-radius: 0.8rem;
-        border: solid $border-color 1rem;
+        @include border-radius(0.8rem);
+        @include border(solid $border-color 1rem);
+
+        @media #{$mq-mobile} {
+            width: $container-small-screen;
+        }
 
         .pokemon-name {
             text-transform: capitalize;
@@ -30,13 +34,12 @@
             width: 100%;
 
             img { 
-                width: 85%;
-                max-width: 300px;
+                @include pokemon-image($image-width, $max-image-size);
                 display: inline-block;
                 background-color: $light-gray;            
                 box-sizing: content-box;
-                border-radius: 0.25rem;
-                border: solid $border-color 0.2rem;
+                @include border-radius(0.25rem);
+                @include border(solid $border-color 0.2rem);
             }
         }
 
@@ -44,12 +47,11 @@
             display: flex;
             justify-content: space-around;
             align-items: center;
-            width: 85%;
-            max-width: 300px;
+            @include pokemon-image($image-width, $max-image-size);
             font-size: 0.8rem;
             background-color: $light-gray;
-            border-radius: 0.1rem;
-            border: solid $border-color;
+            @include border-radius(0.1rem);
+            @include border(solid $border-color 0.2rem);
             margin-top: -1.2rem;
         }
 
