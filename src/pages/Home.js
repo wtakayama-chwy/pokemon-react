@@ -1,24 +1,32 @@
-import React, { Fragment, useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-
+import React, { Fragment, useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import { actions } from '../redux/actions'
-import { selectors } from '../redux/selectors/selectors'
 
-import Header from '../components/Header'
-import Pokemons from '../components/Pokemons'
-import Searchbar from '../components/Searchbar'
-import RadioButton from '../components/RadioButton'
+import Header from '../components/Header/Header'
+import Searchbar from '../components/Search/Searchbar'
+import RadioButton from '../components/Search/RadioButton'
 
 export default function Home() {
 
+    useEffect(() => {
+        dispatch(actions.showLoader())
+        setTimeout(() => {
+           dispatch(actions.hideLoader()) 
+        }, 1500);
+    })
+    
+    useEffect(() => {
+        dispatch(actions.searchTypeName(true))        
+    })
+    
     const dispatch = useDispatch()
-
+    
     const handleCheckedName = (event) => {                 
         dispatch(actions.searchTypeName(event.target.id)) 
     }
     const handleCheckedSkills = (event) => {                 
         dispatch(actions.searchTypeSkills(event.target.id))
-    }
+    }    
 
     return(
         <Fragment>
@@ -38,7 +46,6 @@ export default function Home() {
                 />
             </div>
             <Searchbar />
-            <Pokemons />
         </Fragment>
     )
 }

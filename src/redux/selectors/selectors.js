@@ -3,8 +3,11 @@ const selectors = {
     getSearchTypeSkills: state => state.searchTypeState.checkedSkills,
     getInput: state => state.inputState.inputValue,
     getPokemon: state => state.pokemonState.pokemon,
-    getLoading: state => state.pokemonState.loading,
-    getFetched: state => state.pokemonState.fetched
+    getAbility: state => state.pokemonState.ability,
+    getLoading: state => state.loadingState.loading,
+    getMessage: state => state.messageState.message,
+    getFetched: state => state.pokemonState.fetched,
+    getFetchedSkills: state => state.pokemonState.fetchedSkills
 }
 
 export { selectors }

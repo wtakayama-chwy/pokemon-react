@@ -1,11 +1,11 @@
 import { actionTypes } from '../actions/actionTypes'
 
 const INITIAL_STATE = {
-    loading: false,
     fetched: false,
+    fetchedSkills: false,
     pokemon: {},
     ability: {},
-    error: ''
+    error: '', 
 }
 
 const pokemonReducer = (state = INITIAL_STATE, action) => {
@@ -13,46 +13,40 @@ const pokemonReducer = (state = INITIAL_STATE, action) => {
     // POKEMON
     case actionTypes.FETCH_POKEMON_REQUEST: 
         return { 
-            ...state, 
-            loading: true,
+            ...state,             
             fetched: false,
-            pokemon: action.payload 
+            pokemon: action.payload,
         }  
     case actionTypes.FETCH_POKEMON_SUCCESS:
-        return {
-            loading: false,
+        return {            
             fetched: true,
             pokemon: action.payload,
-            error: ''
+            error: '',
         }  
     case actionTypes.FETCH_POKEMON_FAILURE: 
-        return {
-            loading: false,
+        return {            
             pokemon: {},
             fetched: true,
             error: action.payload
         }
     // ABILITY
     case actionTypes.FETCH_ABILITY_REQUEST: 
-    return { 
-        ...state, 
-        loading: true,
-        // fetched: false,
-        ability: action.payload 
+        return { 
+            ...state,             
+            fetchedSkills: false,
+            ability: action.payload,
     }  
     case actionTypes.FETCH_ABILITY_SUCCESS:
-        return {
-            loading: false,
-            // fetched: true,
+        return {            
+            fetchedSkills: true,
             ability: action.payload,
-            error: ''
+            error: '',
         }  
     case actionTypes.FETCH_ABILITY_FAILURE: 
-        return {
-            loading: false,
+        return {            
             ability: {},
-            // fetched: true,
-            error: action.payload
+            fetchedSkills: true,
+            error: action.payload,
         }        
     default: 
       return state

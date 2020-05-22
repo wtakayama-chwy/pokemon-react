@@ -1,8 +1,8 @@
 import { actionTypes } from '../actions/actionTypes'
 
 const INITIAL_STATE = {
-    checkedName: false,
-    checkedSkills: false
+    checkedName: true,
+    checkedSkills: true
 }
 
 const searchTypeReducer = (state = INITIAL_STATE, action) => {

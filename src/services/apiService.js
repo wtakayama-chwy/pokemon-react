@@ -9,7 +9,7 @@ const consumeApi = (param = '', method = 'GET', body) => {
         body
     })
     .then(res => ApiService.HandleError(res))
-    .then(res => res.json());
+    .then(res => res.json())
 }
 
 const ApiService = {
