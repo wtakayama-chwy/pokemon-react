@@ -20,21 +20,21 @@
         margin: 0 auto;
         position: relative;
         #moving-container {
-            width: 10em;
-            height: 10em;
+            width: 8em;
+            height: 8em;
             margin: 10px auto 70px;
             position: relative;
             animation: translating 5s infinite;
         }
         #pokeball-container {
-            width: 10em;
-            height: 10em;
+            width: 8em;
+            height: 8em;
             margin: 20px auto;
             animation: spinning 5s infinite;
         }
         #pokeball { 
-            width: 10em;
-            height: 10em;
+            width: 8em;
+            height: 8em;
             background-color: #fff;
             @include border-radius(50%);
             position: relative;
@@ -44,16 +44,16 @@
             content: '';
             background-color: red;
             @include border-radius(5em 5em 0 0);
-            width: 10em;
-            height: 5em;
+            width: 8em;
+            height: 4em;
             position: absolute;
         }
         .pokeball-details {
-            width: 10em;
+            width: 8em;
             height: 1em;
             background-color: #333;
             position: absolute;
-            top: 4.5em;
+            top: 3.5em;
             &::before {
                 content: '';
                 width: 3.5em;
@@ -62,7 +62,7 @@
                 background-color: #333;
                 position: absolute;
                 top: -1.25em;
-                left: 3.25em;
+                left: 2.25em;
                 z-index: 200;
             }
             &::after {
@@ -74,7 +74,7 @@
                 background-color: #fff;
                 position: absolute;
                 top: -0.65em;
-                left: 3.80em;
+                left: 2.80em;
                 margin: 0 auto;
                 z-index: 250;
                 animation: color-change 3s infinite;
