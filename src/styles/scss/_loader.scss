@@ -20,20 +20,20 @@
         margin: 0 auto;
         position: relative;
         #moving-container {
-            width: 10em;
+            width: 8em;
             height: 10em;
             margin: 10px auto 70px;
             position: relative;
             animation: translating 5s infinite;
         }
         #pokeball-container {
-            width: 10em;
+            width: 8em;
             height: 10em;
             margin: 20px auto;
             animation: spinning 5s infinite;
         }
         #pokeball { 
-            width: 10em;
+            width: 8em;
             height: 10em;
             background-color: #fff;
             @include border-radius(50%);
@@ -44,12 +44,12 @@
             content: '';
             background-color: red;
             @include border-radius(5em 5em 0 0);
-            width: 10em;
+            width: 8em;
             height: 5em;
             position: absolute;
         }
         .pokeball-details {
-            width: 10em;
+            width: 8em;
             height: 1em;
             background-color: #333;
             position: absolute;
