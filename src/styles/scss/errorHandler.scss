@@ -1,5 +1,5 @@
-@import './helpers/variables';
-@import './helpers/mixins';
+@import './helpers/_variables';
+@import './helpers/_mixins';
 
 .handler-error {
     @include message(solid $red 0.1em);

@@ -1,5 +1,5 @@
-@import './helpers/variables';
-@import './helpers/placeholders';
+@import './helpers/_variables';
+@import './helpers/_placeholders';
 
 .button {
     @media #{$mq-mobile} {
