@@ -23,6 +23,7 @@
 
         @media #{$mq-mobile} {
             width: $container-small-screen;
+            height: 80vh;
         }
 
         .pokemon-name {
@@ -88,6 +89,7 @@
     
                     @media #{$mq-mobile} {
                         min-width: 8em;
+                        line-height: 1.25rem;
                     }
     
                     &:hover {
