@@ -21,6 +21,7 @@
   - Pokemon API - https://pokeapi.co/ version 2
   - Insonmia to test get requests
   - Chrome Devtools
+  - Heroku for deployment - link: https://pokemon-challenge-react.herokuapp.com/
 
 ## :rocket: Goal:
   Create a responsive single page application using React (library), consuming webservices (GET) that were available on a specific link
